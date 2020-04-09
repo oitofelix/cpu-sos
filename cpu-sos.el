@@ -6,7 +6,7 @@
 ;; Keywords: processes
 ;; Package: cpu-sos
 ;; Homepage: https://github.com/oitofelix/cpu-sos
-;; Version: 20200327.2034
+;; Version: 20200409.2056
 ;; Package-Requires: ((emacs "25.1"))
 
 ;; This program is free software: you can redistribute it and/or
