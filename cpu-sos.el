@@ -7,7 +7,7 @@
 ;; Package: cpu-sos
 ;; Homepage: https://github.com/oitofelix/cpu-sos
 ;; Version: 20200327.2034
-;; Package-Requires: ((emacs "24.1"))
+;; Package-Requires: ((emacs "25.1"))
 
 ;; This program is free software: you can redistribute it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -56,26 +56,31 @@
 
 
 (eval-when-compile
-  (require 'cl-macs)
   (require 'subr-x))
 
 (require 'eieio)
-(require 'cl-seq)
+(require 'cl-lib)
 (require 'cl-extra)
 (require 'exwm nil :noerror)
 
 
+(defcustom cpu-sos-mode-lighter " CPUSOS"
+  "String displayed in the mode line when CPU-SOS mode is on.
+For instance, \" 🆘\" is a nice one."
+  :type 'string
+  :group 'cpu-sos)
+
 ;;;###autoload
 (define-minor-mode cpu-sos-mode
-  "Toggle Cpu-Sos mode on or off.
-With a prefix argument ARG, enable Cpu-Sos mode if ARG is
+  "Toggle CPU-SOS mode on or off.
+With a prefix argument ARG, enable CPU-SOS mode if ARG is
 positive, and disable it otherwise.  If called from Lisp, enable
 the mode if ARG is omitted or nil, and toggle it if ARG is ‘toggle’.
 
 For a description of this mode: \\[decribe-package] cpu-sos RET."
   :group 'cpu-sos
   :init-value nil
-  :lighter " 🆘"
+  :lighter cpu-sos-mode-lighter
   (cond
     (cpu-sos-mode
      ;; If enabling, at least one buffer is in ‘cpu-sos-mode’.  Thus
